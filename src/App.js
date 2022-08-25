@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import SearchField from "./components/SearchField";
+
 
 function App() {
   return (
-    <div className="App">
-   
+    <div className="ui container">
+      <SearchField />
     </div>
   );
 }
