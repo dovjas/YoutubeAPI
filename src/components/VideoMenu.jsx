@@ -1,10 +1,15 @@
 import React,{Component} from 'react'
+import VideoItem from './VideoItem'
 
-const VideoMenu = (props) =>{
-    
+
+const VideoMenu = ({videos}) =>{
+    const renderedMenu = videos.map((videos)=>{
+        return <VideoItem />;
+    });
+
     return(
         <div>
-           Test {props.videos.length}
+           {renderedMenu}
         </div>
     )
 }
