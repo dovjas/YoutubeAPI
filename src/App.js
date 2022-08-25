@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import "./App.css";
 import SearchField from "./components/SearchField";
 import youtube from "./apis/youtube"
+import VideoMenu from "./components/VideoMenu";
+
 
 class App extends React.Component{
   state = {videos: [] };
@@ -22,6 +24,7 @@ class App extends React.Component{
       <div className="ui container">
         <SearchField onFormSubmit={this.onKeywordSubmit}/>
         Videos found: {this.state.videos.length}
+        <VideoMenu videos={this.state.videos} />
       </div>
     );
   }
