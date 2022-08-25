@@ -3,8 +3,8 @@ import VideoItem from './VideoItem'
 
 
 const VideoMenu = ({videos}) =>{
-    const renderedMenu = videos.map((videos)=>{
-        return <VideoItem />;
+    const renderedMenu = videos.map((video)=>{
+        return <VideoItem video={video} />;
     });
 
     return(
