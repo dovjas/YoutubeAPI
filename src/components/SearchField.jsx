@@ -1,16 +1,17 @@
 import React,{Component} from "react"
 
 class SearchField extends React.Component {
-  state = {term: ''};
+  state = {keyword: ''};
 
 
   onInputChange = event=> {
-    this.setState({term: event.target.value});
+    this.setState({keyword: event.target.value});
   }
 
   onFormSubmit = event =>{
     event.preventDefault();
 
+    this.props.onFormSubmit(this.state.keyword);
   }
 
   render(){
@@ -21,7 +22,7 @@ class SearchField extends React.Component {
             <label>VIDEO</label>
             <input type="text" 
             placeholder="Search video" 
-            value={this.state.term}
+            value={this.state.keyword}
             onChange={this.onInputChange}
             />
           </div>
