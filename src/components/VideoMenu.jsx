@@ -8,8 +8,8 @@ const VideoMenu = ({videos}) =>{
     });
 
     return(
-        <div>
-           {renderedMenu}
+        <div className="ui celled list">
+                {renderedMenu}
         </div>
     )
 }
