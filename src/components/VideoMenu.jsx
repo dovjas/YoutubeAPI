@@ -4,7 +4,13 @@ import VideoItem from './VideoItem'
 
 const VideoMenu = ({videos, onVideoSelect}) =>{
     const renderedMenu = videos.map((video)=>{
-        return <VideoItem onVideoSelect={onVideoSelect} video={video} />;
+        return (
+        <VideoItem 
+          onVideoSelect={onVideoSelect} 
+          video={video}
+          key={video.id.videoId}
+        />
+        )
     });
 
     return(
