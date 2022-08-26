@@ -2,9 +2,9 @@ import React,{Component} from 'react'
 import VideoItem from './VideoItem'
 
 
-const VideoMenu = ({videos}) =>{
+const VideoMenu = ({videos, onVideoSelect}) =>{
     const renderedMenu = videos.map((video)=>{
-        return <VideoItem video={video} />;
+        return <VideoItem onVideoSelect={onVideoSelect} video={video} />;
     });
 
     return(
