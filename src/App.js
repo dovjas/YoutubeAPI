@@ -6,7 +6,13 @@ import VideoMenu from "./components/VideoMenu";
 import VideoDetails from "./components/VideoDetails";
 
 class App extends React.Component{
-  state = {videos: [], clickedVideo: null };
+  state = {
+    videos: [], clickedVideo: null,
+  };
+
+  componentDidMount(){
+    this.onKeywordSubmit('Lithuania')
+  }
     
   onKeywordSubmit = async keyword =>{
     const response = await youtube.get('/search',{
@@ -15,7 +21,10 @@ class App extends React.Component{
       }
     });
 
-    this.setState({videos: response.data.items})
+    this.setState({
+      videos: response.data.items,
+      clickedVideo: response.data.items[0]
+    })
   };
 
   onVideoClick = (video) =>{
@@ -28,7 +37,6 @@ class App extends React.Component{
       <div className="ui container">
         <SearchField onFormSubmit={this.onKeywordSubmit}/>
         <div className="ui grid">
-          <h3>Videos found: {this.state.videos.length} </h3>
           <div className="ui row">
             <div className="eleven wide column">
               <VideoDetails video={this.state.clickedVideo} />
