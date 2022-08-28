@@ -1,3 +1,12 @@
+YouTube App in React
+
+A simple & minimalistic UI for searching YouTube Videos.
+
+Using
+1. React;
+2. Youtube API;
+3. Semantic UI.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
